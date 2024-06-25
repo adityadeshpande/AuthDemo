@@ -20,7 +20,7 @@ namespace AuthDemo.Controllers
             _logger = logger;
         }
 
-        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Read")]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Read,Admin")]
         [HttpGet("AsUserWithRead")]
         public IEnumerable<WeatherForecast> AsUserWithRead()
         {

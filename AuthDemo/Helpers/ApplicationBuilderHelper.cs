@@ -15,12 +15,10 @@ namespace AuthDemo.Helpers
 
         public static void ConfigureOptions(WebApplicationBuilder builder)
         {
-            ConfigAuthStuff(builder);
-        }
-        private static void ConfigAuthStuff(WebApplicationBuilder builder)
-        {
             builder.Services.Configure<JwtOptions>(option => builder.Configuration.GetSection("JwtOptions").Bind(option));
         }
+
+
         internal static void AddAuthentication(WebApplicationBuilder builder)
         {
             var jwtOptions = builder.Configuration.GetSection("JwtOptions").Get<JwtOptions>();

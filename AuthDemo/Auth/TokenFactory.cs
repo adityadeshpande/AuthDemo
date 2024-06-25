@@ -66,7 +66,7 @@ namespace AuthDemo.Auth
             return userName;
         }
 
-        public static string CreateAccessToken(JwtOptions jwtOptions, string username, TimeSpan expiration, string[] permissions)
+        private static string CreateAccessToken(JwtOptions jwtOptions, string username, TimeSpan expiration, string[] permissions)
         {
             var keyBytes = Encoding.UTF8.GetBytes(jwtOptions.SigningKey);
             var symmetricKey = new SymmetricSecurityKey(keyBytes);
